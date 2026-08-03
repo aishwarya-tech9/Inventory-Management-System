@@ -65,14 +65,14 @@ def total_inventory_value():
     for product in products:
         total_inventory_value=total_inventory_value+product["price"]*product["quantity"]
     print("Total inventory value :",total_inventory_value)
-def save_inventory():
+def save_inventory_value():
     file=open("inventory.txt","w")
     print(products)
     for product in products:
         file.write(f"{product["name"]},{product["price"]},{product["quantity"]},{product["total"]}\n")
     print("Inventory save successfully")
     file.close()
-def load_inventory():
+def load_inventory_value():
     file=open("inventory.txt")
     products.clear()
     for line in file:
@@ -88,13 +88,13 @@ def load_inventory():
 while True:
     print("\n---------Inventory Management System---------")
     print("1. Add product")
-    print("2. view product")
+    print("2. View product")
     print("3. Search product")
     print("4. Update product")
     print("5. Delete product")
     print("6. Total inventory product")
-    print("7. Save inventory")
-    print("8. Load inventory ")
+    print("7. Save inventory details")
+    print("8. Load inventory details")
     print("9. Exit")
 
     choice=input("choice (1-9): ")
@@ -121,10 +121,10 @@ while True:
         total_inventory_value()
         
     elif choice == "7":
-        save_inventory()
+        save_inventory_value()
 
     elif choice=="8": 
-        load_inventory()
+        load_inventory_value()
 
     elif choice=="9":
         print("-------EXIT-------")
